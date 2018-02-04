@@ -1,32 +1,71 @@
 package com.libing.web;
 
 import com.libing.entity.Customer;
+import com.libing.service.CustomerService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
- *
+ * @Description: 客户 Controller
+ * @Auther: LEE
+ * @Date: Create in 2018/2/4 11:23
  */
-@RestController(value = "/customer")
+@RestController
 public class CustomerController {
 
-    @PostMapping(value = "/")
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
+
+    @Autowired
+    private CustomerService customerService;
+
+    /**
+     * 客户新增
+     * @param customer
+     * @return
+     */
+    @PostMapping(value = "/customer", produces = {"application/json;charset=UTF-8"})
     public Customer addCustomer(Customer customer) {
-        return null;
+        logger.debug("新增客户资料： " + customer.toString());
+        return customerService.addCustomer(customer);
     }
 
-    @PutMapping(value = "")
-    public Customer modifyCustomer(Customer customer) {
-        return null;
+    /**
+     * 更新客户
+     * @param customer
+     * @return
+     */
+    @PutMapping(value = "/customer/{id}", produces = {"application/json;charset=UTF-8"})
+    public Customer modifyCustomer(@PathVariable("id") Long id, Customer customer) {
+        logger.debug("修改客户ID:" + id + "资料： " + customer.toString());
+        return customerService.modifyCustomer(id, customer);
     }
 
-    @DeleteMapping
-    public Boolean deleteCustomer(Long id) {
-        return true;
+    /**
+     * 删除客户
+     * @param id
+     * @return
+     */
+    @DeleteMapping(value = "/customer/{id}", produces = {"application/json;charset=UTF-8"})
+    public Boolean deleteCustomer(@PathVariable("id") Long id) {
+        logger.debug("删除客户： id = " + id);
+        return customerService.deleteCustomer(id);
     }
 
-    @GetMapping
-    public Customer queryCustomer(Long id) {
-        return null;
+    /**
+     * 查询客户
+     * @param id
+     * @param name
+     * @param contact
+     * @return
+     */
+    @GetMapping(value = "/customer/list", produces = {"application/json;charset=UTF-8"})
+    public List<Customer> queryCustomerByParams(Long id, String name, String contact) {
+        logger.debug("查询客户列表： ID = " + id + ", NAME = " + name + ", CONTACT = " + contact);
+        return customerService.queryCustomerByParams(id, name, contact);
     }
 
 }

@@ -4,8 +4,8 @@ import java.util.Date;
 
 /**
  * @Description: 客户信息
- * @Author: LEE
- * @Date: Create in 2018/2/4 00:48
+ * @Auther: LEE
+ * @Date: Create in 2018/2/4 11:23
  */
 public class Customer {
 

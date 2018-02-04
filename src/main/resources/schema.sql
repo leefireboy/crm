@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS company (
   net VARCHAR(30) COMMENT '网址',
   reg_cap INT COMMENT '注册资金',
   need VARCHAR(120) COMMENT '客户需求',
-  nature SMALLINT COMMENT '企业性质',
+  nature TINYINT COMMENT '企业性质',
   invoice_id BIGINT COMMENT '发票ID',
   create_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   create_id BIGINT NOT NULL COMMENT '创建人ID',

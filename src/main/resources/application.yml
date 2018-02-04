@@ -25,3 +25,10 @@ mybatis:
     use-generated-keys: true
     use-column-label: true
     map-underscore-to-camel-case: true
+
+# Logging configuration
+debug: true
+logging:
+  file: test.log
+  level:
+    com.libing: debug
