@@ -1,7 +1,9 @@
 package com.libing.web;
 
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  * @Description:
@@ -11,9 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TestController {
 
-    @GetMapping(value = "/hello")
-    public String hello() {
-        return "hello boot";
+    @RequestMapping(value = "/index", method = RequestMethod.GET)
+    public ModelAndView hello() {
+        ModelAndView mv = new ModelAndView("index");
+        mv.addObject("name", 123);
+        return mv;
     }
 
 }
