@@ -16,7 +16,7 @@ public class TestController {
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     public ModelAndView hello() {
         ModelAndView mv = new ModelAndView("index");
-        mv.addObject("name", 123);
+        mv.addObject("name", 123456);
         return mv;
     }
 
