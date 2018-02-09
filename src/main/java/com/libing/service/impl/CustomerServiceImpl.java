@@ -15,8 +15,8 @@ import java.util.List;
 public class CustomerServiceImpl implements CustomerService {
 
     @Override
-    public Customer addCustomer(Customer customer) {
-        return null;
+    public int addCustomer(Customer customer) {
+        return 0;
     }
 
     @Override

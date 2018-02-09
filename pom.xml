@@ -14,6 +14,10 @@
             <name>libing</name>
             <email>lb_special@163.com</email>
         </developer>
+        <developer>
+            <name>wangyang</name>
+            <email>913494146@qq.com</email>
+        </developer>
     </developers>
 
     <parent>

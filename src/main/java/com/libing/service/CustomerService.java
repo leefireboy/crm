@@ -11,7 +11,7 @@ import java.util.List;
  */
 public interface CustomerService {
 
-    Customer addCustomer(Customer customer);
+    int addCustomer(Customer customer);
 
     Customer modifyCustomer(Long id, Customer customer);
 

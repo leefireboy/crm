@@ -1,6 +1,7 @@
 package com.libing.web;
 
 import com.libing.entity.Customer;
+import com.libing.exception.NoEffectException;
 import com.libing.service.CustomerService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,7 +31,13 @@ public class CustomerController {
     @PostMapping(value = "/customer", produces = {"application/json;charset=UTF-8"})
     public Customer addCustomer(Customer customer) {
         logger.debug("新增客户资料： " + customer.toString());
-        return customerService.addCustomer(customer);
+        int i = customerService.addCustomer(customer);
+        if (i <= 0) {
+            throw new NoEffectException("数据库数据没有修改！");
+        } else {
+            return new Customer();// TODO: 2018/2/7
+
+        }
     }
 
     /**

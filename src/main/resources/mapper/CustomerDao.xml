@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.libing.dao.CustomerDao">
+
+    <sql id="customer_col">
+        id, `name`, sex, contact1, contact2, contact3, email, address, birthday,
+        id_card, interest, score, need, impression, company_id, invoice_id, remarks,
+        create_time, create_id, create_name, is_enable
+    </sql>
+
+    <insert id="addCustomer" parameterType="Customer" useGeneratedKeys="true" keyProperty="id">
+        INSERT IGNORE INTO customer (
+            <include refid="customer_col"/>
+        )
+        VALUES
+            (
+                #{id}, #{name}, #{sex}, #{contact1}, #{contact2}, #{contact3}, #{email}, #{address}, #{birthday},
+                #{idCard}, #{interest}, #{score}, #{need}, #{impression}, #{companyId}, #{invoiceId}, #{remarks},
+                #{createTime}, #{createId}, #{createName}, #{isEnable}
+            )
+    </insert>
+
+</mapper>
