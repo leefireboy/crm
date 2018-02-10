@@ -12,6 +12,13 @@ import java.util.List;
  */
 public interface CustomerDao extends BaseDao<Customer> {
 
+    /**
+     * TODO 根据参数查询客户
+     * @param id
+     * @param name
+     * @param contact
+     * @return
+     */
     List<Customer> findByParams(Long id, String name, String contact);
 
 }

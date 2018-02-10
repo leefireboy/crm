@@ -1,5 +1,5 @@
 server:
-  port: 8089
+  port: 8080
   context-path: /crm
 
 # Spring configuration
@@ -37,3 +37,4 @@ logging:
   file: test.log
   level:
     com.libing: debug
+

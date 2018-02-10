@@ -4,7 +4,7 @@ import com.libing.base.BaseDao;
 import com.libing.entity.Company;
 
 /**
- * @Description:
+ * @Description: 公司信息 DAO
  * @Auther: LEE
  * @Date: Create in 2018/2/9 13:59
  */

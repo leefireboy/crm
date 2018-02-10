@@ -15,7 +15,7 @@ public interface BaseDao<T> {
      * @param t
      * @return
      */
-    int add(T t);
+    int insert(T t);
 
     /**
      * 修改
@@ -26,22 +26,22 @@ public interface BaseDao<T> {
 
     /**
      * 删除
-     * @param t
+     * @param id
      * @return
      */
-    int delete(T t);
+    int delete(Serializable id);
 
     /**
      * 根据 ID 查找
      * @param id
      * @return
      */
-    T findById(Serializable id);
+    T selectById(Serializable id);
 
     /**
      * 查询全部
      * @return
      */
-    List<T> findAll();
+    List<T> selectAll();
 
 }

@@ -1,7 +1,9 @@
 package com.libing.service.impl;
 
+import com.libing.dao.CustomerDao;
 import com.libing.entity.Customer;
 import com.libing.service.CustomerService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,9 +16,12 @@ import java.util.List;
 @Service
 public class CustomerServiceImpl implements CustomerService {
 
+    @Autowired
+    private CustomerDao customerDao;
+
     @Override
     public int addCustomer(Customer customer) {
-        return 0;
+        return customerDao.insert(customer);
     }
 
     @Override

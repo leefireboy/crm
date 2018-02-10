@@ -50,7 +50,7 @@ public class Customer {
     // 创建人
     private String createName;
     // 是否启用
-    private Boolean isEnable;
+    private Integer isEnable;
 
     public Customer() {
     }
@@ -215,12 +215,34 @@ public class Customer {
         this.createName = createName;
     }
 
-    public Boolean getEnable() {
+    public Integer getEnable() {
         return isEnable;
     }
 
-    public void setEnable(Boolean enable) {
+    public void setEnable(Integer enable) {
         isEnable = enable;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Customer customer = (Customer) o;
+
+        if (name != null ? !name.equals(customer.name) : customer.name != null) return false;
+        if (sex != null ? !sex.equals(customer.sex) : customer.sex != null) return false;
+        if (contact1 != null ? !contact1.equals(customer.contact1) : customer.contact1 != null) return false;
+        return idCard != null ? idCard.equals(customer.idCard) : customer.idCard == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + (sex != null ? sex.hashCode() : 0);
+        result = 31 * result + (contact1 != null ? contact1.hashCode() : 0);
+        result = 31 * result + (idCard != null ? idCard.hashCode() : 0);
+        return result;
     }
 
     @Override

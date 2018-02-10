@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.libing.dao.InvoiceInformationDao">
+
+    <sql id="col">
+        id, `name`, unique_no, address, telephone, open_bank, open_bank_no,
+        remarks, create_time, create_id, create_name, is_enable
+    </sql>
+
+    <sql id="insert_valid_col">
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="name != null">`name`,</if>
+            <if test="uniqueNo != null">unique_no,</if>
+            <if test="address != null">address,</if>
+            <if test="telephone != null">telephone,</if>
+            <if test="openBank != null">open_bank,</if>
+            <if test="openBankNo != null">open_bank_no,</if>
+            <if test="remarks != null">remarks,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="createId != null">create_id,</if>
+            <if test="createName != null">create_name,</if>
+            <if test="isEnable != null">is_enable,</if>
+        </trim>
+    </sql>
+
+    <sql id="insert_valid_value">
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="name != null">#{name},</if>
+            <if test="uniqueNo != null">#{uniqueNo},</if>
+            <if test="address != null">#{address},</if>
+            <if test="telephone != null">#{telephone},</if>
+            <if test="openBank != null">#{openBank},</if>
+            <if test="openBankNo != null">#{openBankNo},</if>
+            <if test="remarks != null">#{remarks},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="createId != null">#{createId},</if>
+            <if test="createName != null">#{createName},</if>
+            <if test="isEnable != null">#{isEnable},</if>
+        </trim>
+    </sql>
+
+    <sql id="update_valid_col">
+        <trim suffixOverrides=",">
+            <if test="id != null">id=#{id},</if>
+            <if test="name != null">`name`=#{name},</if>
+            <if test="uniqueNo != null">unique_no=#{uniqueNo},</if>
+            <if test="address != null">address=#{address},</if>
+            <if test="telephone != null">telephone=#{telephone},</if>
+            <if test="openBank != null">open_bank=#{openBank},</if>
+            <if test="openBankNo != null">open_bank_no=#{openBankNo},</if>
+            <if test="remarks != null">remarks=#{remarks},</if>
+            <if test="createTime != null">create_time=#{createTime},</if>
+            <if test="createId != null">create_id=#{createId},</if>
+            <if test="createName != null">create_name=#{createName},</if>
+            <if test="isEnable != null">is_enable=#{isEnable},</if>
+        </trim>
+    </sql>
+    
+    <insert id="insert" parameterType="InvoiceInformation">
+        INSERT IGNORE INTO invoice_information
+            <include refid="insert_valid_col"/>
+        VALUES
+            <include refid="insert_valid_value"/>
+    </insert>
+
+    <update id="update" parameterType="InvoiceInformation">
+        UPDATE invoice_information
+        SET 
+            <include refid="update_valid_col"/>
+        WHERE
+            id=#{id}
+    </update>
+
+    <update id="delete">
+        UPDATE invoice_information
+        SET
+            is_enable=0
+        WHERE
+            id=#{id}
+    </update>
+
+    <select id="selectById" resultType="InvoiceInformation">
+        SELECT <include refid="col"/> FROM invoice_information WHERE id=#{id}
+    </select>
+
+    <select id="selectAll" resultType="InvoiceInformation">
+        SELECT <include refid="col"/> FROM invoice_information
+    </select>
+
+</mapper>

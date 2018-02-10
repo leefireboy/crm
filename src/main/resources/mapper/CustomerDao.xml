@@ -4,22 +4,118 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.libing.dao.CustomerDao">
 
-    <sql id="customer_col">
+    <sql id="col">
         id, `name`, sex, contact1, contact2, contact3, email, address, birthday,
         id_card, interest, score, need, impression, company_id, invoice_id, remarks,
         create_time, create_id, create_name, is_enable
     </sql>
 
-    <insert id="addCustomer" parameterType="Customer" useGeneratedKeys="true" keyProperty="id">
-        INSERT IGNORE INTO customer (
-            <include refid="customer_col"/>
-        )
+    <sql id="insert_valid_col">
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="name != null">`name`,</if>
+            <if test="sex != null">sex,</if>
+            <if test="contact1 != null">contact1,</if>
+            <if test="contact2 != null">contact2,</if>
+            <if test="contact3 != null">contact3,</if>
+            <if test="email != null">email,</if>
+            <if test="address != null">address,</if>
+            <if test="birthday != null">birthday,</if>
+            <if test="idCard != null">id_card,</if>
+            <if test="interest != null">interest,</if>
+            <if test="score != null">score,</if>
+            <if test="need != null">need,</if>
+            <if test="impression != null">impression,</if>
+            <if test="companyId != null">company_id,</if>
+            <if test="invoiceId != null">invoice_id,</if>
+            <if test="remarks != null">remarks,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="createId != null">create_id,</if>
+            <if test="createName != null">create_name,</if>
+            <if test="isEnable != null">is_enable,</if>
+        </trim>
+    </sql>
+
+    <sql id="insert_valid_value">
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id}</if>
+            <if test="name != null">#{name},</if>
+            <if test="sex != null">#{sex},</if>
+            <if test="contact1 != null">#{contact1},</if>
+            <if test="contact2 != null">#{contact2},</if>
+            <if test="contact3 != null">#{contact3},</if>
+            <if test="email != null">#{email},</if>
+            <if test="address != null">#{address},</if>
+            <if test="birthday != null">#{birthday},</if>
+            <if test="idCard != null">#{idCard},</if>
+            <if test="interest != null">#{interest},</if>
+            <if test="score != null">#{score},</if>
+            <if test="need != null">#{need},</if>
+            <if test="impression != null">#{impression},</if>
+            <if test="companyId != null">#{companyId},</if>
+            <if test="invoiceId != null">#{invoiceId},</if>
+            <if test="remarks != null">#{remarks},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="createId != null">#{createId},</if>
+            <if test="createName != null">#{createName},</if>
+            <if test="isEnable != null">#{isEnable},</if>
+        </trim>
+    </sql>
+
+    <sql id="update_valid_col">
+        <trim suffixOverrides=",">
+            <if test="name != null">`name`=#{name},</if>
+            <if test="sex != null">sex=#{sex},</if>
+            <if test="contact1 != null">contact1=#{contact1},</if>
+            <if test="contact2 != null">contact2=#{contact2},</if>
+            <if test="contact3 != null">contact3=#{contact3},</if>
+            <if test="email != null">email=#{email},</if>
+            <if test="address != null">address=#{address},</if>
+            <if test="birthday != null">birthday=#{birthday},</if>
+            <if test="idCard != null">id_card=#{idCard},</if>
+            <if test="interest != null">interest=#{interest},</if>
+            <if test="score != null">score=#{score},</if>
+            <if test="need != null">need=#{need},</if>
+            <if test="impression != null">impression=#{impression},</if>
+            <if test="companyId != null">company_id=#{companyId},</if>
+            <if test="invoiceId != null">invoice_id=#{invoiceId},</if>
+            <if test="remarks != null">remarks=#{remarks},</if>
+            <if test="createTime != null">create_time=#{createTime},</if>
+            <if test="createId != null">create_id=#{createId},</if>
+            <if test="createName != null">create_name=#{createName},</if>
+            <if test="isEnable != null">is_enable=#{isEnable},</if>
+        </trim>
+    </sql>
+
+    <insert id="insert" parameterType="Customer" useGeneratedKeys="true" keyProperty="id">
+        INSERT IGNORE INTO customer
+            <include refid="insert_valid_col"/>
         VALUES
-            (
-                #{id}, #{name}, #{sex}, #{contact1}, #{contact2}, #{contact3}, #{email}, #{address}, #{birthday},
-                #{idCard}, #{interest}, #{score}, #{need}, #{impression}, #{companyId}, #{invoiceId}, #{remarks},
-                #{createTime}, #{createId}, #{createName}, #{isEnable}
-            )
+            <include refid="insert_valid_value"/>
     </insert>
+
+    <update id="update" parameterType="Customer">
+        UPDATE customer
+        SET
+            <include refid="update_valid_col"/>
+        WHERE
+            id=#{id}
+    </update>
+
+    <update id="delete">
+        UPDATE customer
+        SET
+            is_enable=0
+        WHERE
+            id=#{id}
+    </update>
+
+    <select id="selectById" resultType="Customer">
+        SELECT <include refid="col"/> FROM customer WHERE id=#{id}
+    </select>
+
+    <select id="selectAll" resultType="Customer">
+        SELECT <include refid="col"/> FROM customer
+    </select>
 
 </mapper>

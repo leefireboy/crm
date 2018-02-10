@@ -22,6 +22,8 @@ public class InvoiceInformation {
     private String open_bank;
     // 开户银行账号
     private String open_bank_no;
+    // 备注
+    private String remarks;
     // 创建时间
     private Date create_time;
     // 创建人ID
@@ -87,6 +89,14 @@ public class InvoiceInformation {
         this.open_bank_no = open_bank_no;
     }
 
+    public String getRemarks() {
+        return remarks;
+    }
+
+    public void setRemarks(String remarks) {
+        this.remarks = remarks;
+    }
+
     public Date getCreate_time() {
         return create_time;
     }
@@ -95,20 +105,20 @@ public class InvoiceInformation {
         this.create_time = create_time;
     }
 
-    public Long getCreat_id() {
+    public Long getCreate_id() {
         return create_id;
     }
 
-    public void setCreat_id(Long creat_id) {
-        this.create_id = creat_id;
+    public void setCreate_id(Long create_id) {
+        this.create_id = create_id;
     }
 
-    public String getCreat_name() {
+    public String getCreate_name() {
         return create_name;
     }
 
-    public void setCreat_name(String creat_name) {
-        this.create_name = creat_name;
+    public void setCreate_name(String create_name) {
+        this.create_name = create_name;
     }
 
     public Integer getIs_enable() {

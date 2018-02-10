@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.libing.dao.CompanyDao">
+
+    <sql id="col">
+        id, `name`, email, address, net, reg_cap, need, nature, remarks,
+        invoice_id, create_time, create_id, create_name, is_enable
+    </sql>
+
+    <sql id="insert_valid_col">
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="name != null">`name`,</if>
+            <if test="email != null">email,</if>
+            <if test="address != null">address,</if>
+            <if test="net != null">net,</if>
+            <if test="regCap != null">reg_cap,</if>
+            <if test="need != null">need,</if>
+            <if test="nature != null">nature,</if>
+            <if test="remarks != null">remarks,</if>
+            <if test="invoiceId != null">invoice_id,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="createId != null">create_id,</if>
+            <if test="createName != null">create_name,</if>
+            <if test="isEnable != null">is_enable,</if>
+        </trim>
+    </sql>
+
+    <sql id="insert_valid_value">
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="name != null">#{name},</if>
+            <if test="email != null">#{email},</if>
+            <if test="address != null">#{address},</if>
+            <if test="net != null">#{net},</if>
+            <if test="regCap != null">#{regCap},</if>
+            <if test="need != null">#{need},</if>
+            <if test="nature != null">#{nature},</if>
+            <if test="remarks != null">#{remarks},</if>
+            <if test="invoiceId != null">#{invoiceId},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="createId != null">#{createId},</if>
+            <if test="createName != null">#{createName},</if>
+            <if test="isEnable != null">#{isEnable},</if>
+        </trim>
+    </sql>
+
+    <sql id="update_valid_col">
+        <trim suffixOverrides=",">
+            <if test="id != null">id=#{id},</if>
+            <if test="name != null">`name`=#{name},</if>
+            <if test="email != null">email=#{email},</if>
+            <if test="address != null">address=#{address},</if>
+            <if test="net != null">net=#{net},</if>
+            <if test="regCap != null">reg_cap=#{regCap},</if>
+            <if test="need != null">need=#{need},</if>
+            <if test="nature != null">nature=#{nature},</if>
+            <if test="remarks != null">remarks=#{remarks},</if>
+            <if test="invoiceId != null">invoice_id=#{invoiceId},</if>
+            <if test="createTime != null">create_time=#{createTime},</if>
+            <if test="createId != null">create_id=#{createId},</if>
+            <if test="createName != null">create_name=#{createName},</if>
+            <if test="isEnable != null">is_enable=#{isEnable},</if>
+        </trim>
+    </sql>
+
+    <insert id="insert" parameterType="Company" useGeneratedKeys="true" keyProperty="id">
+        INSERT IGNORE INTO company
+            <include refid="insert_valid_col"/>
+        VALUES
+            <include refid="insert_valid_value"/>
+    </insert>
+
+    <update id="update" parameterType="Company">
+        UPDATE company
+        SET
+            <include refid="update_valid_col"/>
+        WHERE
+            id=#{id}
+    </update>
+    
+    <update id="delete">
+        UPDATE company
+        SET
+            is_enable=0
+        WHERE
+            id=#{id}
+    </update>
+
+    <select id="selectById" resultType="Company">
+        SELECT <include refid="col"/> FROM company WHERE id=#{id}
+    </select>
+
+    <select id="selectAll" resultType="Company">
+        SELECT <include refid="col"/> FROM company
+    </select>
+    
+</mapper>
