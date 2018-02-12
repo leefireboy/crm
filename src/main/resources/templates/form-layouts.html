@@ -1,53 +1,53 @@
 ﻿<!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
 <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 
     <!-- Twitter -->
-    <meta name="twitter:site" content="@themepixels">
-    <meta name="twitter:creator" content="@themepixels">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Starlight">
-    <meta name="twitter:description" content="Premium Quality and Responsive UI for Dashboard.">
-    <meta name="twitter:image" content="http://themepixels.me/starlight/img/starlight-social.png">
+    <meta name="twitter:site" content="@themepixels"/>
+    <meta name="twitter:creator" content="@themepixels"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Starlight"/>
+    <meta name="twitter:description" content="Premium Quality and Responsive UI for Dashboard."/>
+    <meta name="twitter:image" content="http://themepixels.me/starlight/img/starlight-social.png"/>
 
     <!-- Facebook -->
-    <meta property="og:url" content="http://themepixels.me/starlight">
-    <meta property="og:title" content="Starlight">
-    <meta property="og:description" content="Premium Quality and Responsive UI for Dashboard.">
+    <meta property="og:url" content="http://themepixels.me/starlight"/>
+    <meta property="og:title" content="Starlight"/>
+    <meta property="og:description" content="Premium Quality and Responsive UI for Dashboard."/>
 
-    <meta property="og:image" content="http://themepixels.me/starlight/img/starlight-social.png">
-    <meta property="og:image:secure_url" content="http://themepixels.me/starlight/img/starlight-social.png">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="600">
+    <meta property="og:image" content="http://themepixels.me/starlight/img/starlight-social.png"/>
+    <meta property="og:image:secure_url" content="http://themepixels.me/starlight/img/starlight-social.png"/>
+    <meta property="og:image:type" content="image/png"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="600"/>
 
     <!-- Meta -->
-    <meta name="description" content="Premium Quality and Responsive UI for Dashboard.">
-    <meta name="author" content="ThemePixels">
+    <meta name="description" content="Premium Quality and Responsive UI for Dashboard."/>
+    <meta name="author" content="ThemePixels"/>
 
     <title>Starlight Responsive Bootstrap 4 Admin Template</title>
 
     <!-- vendor css -->
-    <link href="css/font-awesome.css" rel="stylesheet">
-    <link href="css/ionicons.css" rel="stylesheet">
-    <link href="css/perfect-scrollbar.css" rel="stylesheet">
-    <link href="css/github.css" rel="stylesheet">
-    <link href="css/select2.min.css" rel="stylesheet">
+    <link th:href="@{/css/font-awesome.css}" rel="stylesheet"/>
+    <link th:href="@{/css/ionicons.css}" rel="stylesheet"/>
+    <link th:href="@{/css/perfect-scrollbar.css}" rel="stylesheet"/>
+    <link th:href="@{/css/github.css}" rel="stylesheet"/>
+    <link th:href="@{/css/select2.min.css}" rel="stylesheet"/>
 
     <!-- Starlight CSS -->
-    <link rel="stylesheet" href="css/starlight.css">
+    <link rel="stylesheet" th:href="@{/css/starlight.css}" />
 </head>
 
 <body>
 
 <!-- ########## START: LEFT PANEL ########## -->
-<div class="sl-logo"><a href=""><img src="picture/mt_logo_wh.jpg" style="height:25px; weight:25px"/> 海津皇冠</a></div>
+<div class="sl-logo"><a href=""><img th:src="@{/picture/mt_logo_wh.jpg}" style="height:25px; weight:25px"/> 海津皇冠</a></div>
 <div class="sl-sideleft">
     <div class="input-group input-group-search">
-        <input type="search" name="search" class="form-control" placeholder="Search">
+        <input type="search" name="search" class="form-control" placeholder="Search"/>
         <span class="input-group-btn">
           <button class="btn"><i class="fa fa-search"></i></button>
         </span><!-- input-group-btn -->
@@ -159,7 +159,7 @@
         </ul>
     </div><!-- sl-sideleft-menu -->
 
-    <br>
+    <br/>
 </div><!-- sl-sideleft -->
 <!-- ########## END: LEFT PANEL ########## -->
 
@@ -176,7 +176,7 @@
             <div class="dropdown">
                 <a href="" class="nav-link nav-link-profile" data-toggle="dropdown">
                     <span class="logged-name">Jane<span class="hidden-md-down"> Doe</span></span>
-                    <img src="picture/img3.jpg" class="wd-32 rounded-circle" alt="">
+                    <img th:src="@{/picture/img3.jpg}" class="wd-32 rounded-circle" alt=""/>
                 </a>
                 <div class="dropdown-menu dropdown-menu-header wd-200">
                     <ul class="list-unstyled user-profile-nav">
@@ -220,7 +220,7 @@
                 <!-- loop starts here -->
                 <a href="" class="media-list-link">
                     <div class="media">
-                        <img src="picture/img3.jpg" class="wd-40 rounded-circle" alt="">
+                        <img th:src="@{/picture/img3.jpg}" class="wd-40 rounded-circle" alt=""/>
                         <div class="media-body">
                             <p class="mg-b-0 tx-medium tx-gray-800 tx-13">Donna Seay</p>
                             <span class="d-block tx-11 tx-gray-500">2 minutes ago</span>
@@ -232,7 +232,7 @@
                 <!-- loop ends here -->
                 <a href="" class="media-list-link">
                     <div class="media">
-                        <img src="picture/img4.jpg" class="wd-40 rounded-circle" alt="">
+                        <img th:src="@{/picture/img4.jpg}" class="wd-40 rounded-circle" alt=""/>
                         <div class="media-body">
                             <p class="mg-b-0 tx-medium tx-gray-800 tx-13">Samantha Francis</p>
                             <span class="d-block tx-11 tx-gray-500">3 hours ago</span>
@@ -242,7 +242,7 @@
                 </a>
                 <a href="" class="media-list-link">
                     <div class="media">
-                        <img src="picture/img7.jpg" class="wd-40 rounded-circle" alt="">
+                        <img th:src="@{/picture/img7.jpg}" class="wd-40 rounded-circle" alt=""/>
                         <div class="media-body">
                             <p class="mg-b-0 tx-medium tx-gray-800 tx-13">Robert Walker</p>
                             <span class="d-block tx-11 tx-gray-500">5 hours ago</span>
@@ -253,7 +253,7 @@
                 </a>
                 <a href="" class="media-list-link">
                     <div class="media">
-                        <img src="picture/img5.jpg" class="wd-40 rounded-circle" alt="">
+                        <img th:src="@{/picture/img5.jpg}" class="wd-40 rounded-circle" alt=""/>
                         <div class="media-body">
                             <p class="mg-b-0 tx-medium tx-gray-800 tx-13">Larry Smith</p>
                             <span class="d-block tx-11 tx-gray-500">Yesterday, 8:34pm</span>
@@ -265,7 +265,7 @@
                 </a>
                 <a href="" class="media-list-link">
                     <div class="media">
-                        <img src="picture/img3.jpg" class="wd-40 rounded-circle" alt="">
+                        <img th:src="@{/picture/img3.jpg}" class="wd-40 rounded-circle" alt=""/>
                         <div class="media-body">
                             <p class="mg-b-0 tx-medium tx-gray-800 tx-13">Donna Seay</p>
                             <span class="d-block tx-11 tx-gray-500">Jan 23, 2:32am</span>
@@ -287,7 +287,7 @@
                 <!-- loop starts here -->
                 <a href="" class="media-list-link read">
                     <div class="media pd-x-20 pd-y-15">
-                        <img src="picture/img8.jpg" class="wd-40 rounded-circle" alt="">
+                        <img th:src="@{/picture/img8.jpg}" class="wd-40 rounded-circle" alt=""/>
                         <div class="media-body">
                             <p class="tx-13 mg-b-0 tx-gray-700"><strong class="tx-medium tx-gray-800">Suzzeth
                                 Bungaos</strong> tagged you and 18 others in a post.</p>
@@ -298,7 +298,7 @@
                 <!-- loop ends here -->
                 <a href="" class="media-list-link read">
                     <div class="media pd-x-20 pd-y-15">
-                        <img src="picture/img9.jpg" class="wd-40 rounded-circle" alt="">
+                        <img th:src="@{/picture/img9.jpg}" class="wd-40 rounded-circle" alt=""/>
                         <div class="media-body">
                             <p class="tx-13 mg-b-0 tx-gray-700"><strong class="tx-medium tx-gray-800">Mellisa
                                 Brown</strong> appreciated your work <strong class="tx-medium tx-gray-800">The Social
@@ -309,7 +309,7 @@
                 </a>
                 <a href="" class="media-list-link read">
                     <div class="media pd-x-20 pd-y-15">
-                        <img src="picture/img10.jpg" class="wd-40 rounded-circle" alt="">
+                        <img th:src="@{/picture/img10.jpg}" class="wd-40 rounded-circle" alt=""/>
                         <div class="media-body">
                             <p class="tx-13 mg-b-0 tx-gray-700">20+ new items added are for sale in your <strong
                                     class="tx-medium tx-gray-800">Sale Group</strong></p>
@@ -319,7 +319,7 @@
                 </a>
                 <a href="" class="media-list-link read">
                     <div class="media pd-x-20 pd-y-15">
-                        <img src="picture/img5.jpg" class="wd-40 rounded-circle" alt="">
+                        <img th:src="@{/picture/img5.jpg}" class="wd-40 rounded-circle" alt=""/>
                         <div class="media-body">
                             <p class="tx-13 mg-b-0 tx-gray-700"><strong class="tx-medium tx-gray-800">Julius
                                 Erving</strong> wants to connect with you on your conversation with <strong
@@ -330,7 +330,7 @@
                 </a>
                 <a href="" class="media-list-link read">
                     <div class="media pd-x-20 pd-y-15">
-                        <img src="picture/img8.jpg" class="wd-40 rounded-circle" alt="">
+                        <img th:src="@{/picture/img8.jpg}" class="wd-40 rounded-circle" alt=""/>
                         <div class="media-body">
                             <p class="tx-13 mg-b-0 tx-gray-700"><strong class="tx-medium tx-gray-800">Suzzeth
                                 Bungaos</strong> tagged you and 12 others in a post.</p>
@@ -340,7 +340,7 @@
                 </a>
                 <a href="" class="media-list-link read">
                     <div class="media pd-x-20 pd-y-15">
-                        <img src="picture/img10.jpg" class="wd-40 rounded-circle" alt="">
+                        <img th:src="@{/picture/img10.jpg}" class="wd-40 rounded-circle" alt=""/>
                         <div class="media-body">
                             <p class="tx-13 mg-b-0 tx-gray-700">10+ new items added are for sale in your <strong
                                     class="tx-medium tx-gray-800">Sale Group</strong></p>
@@ -350,7 +350,7 @@
                 </a>
                 <a href="" class="media-list-link read">
                     <div class="media pd-x-20 pd-y-15">
-                        <img src="picture/img9.jpg" class="wd-40 rounded-circle" alt="">
+                        <img th:src="@{/picture/img9.jpg}" class="wd-40 rounded-circle" alt=""/>
                         <div class="media-body">
                             <p class="tx-13 mg-b-0 tx-gray-700"><strong class="tx-medium tx-gray-800">Mellisa
                                 Brown</strong> appreciated your work <strong class="tx-medium tx-gray-800">The Great
@@ -361,7 +361,7 @@
                 </a>
                 <a href="" class="media-list-link read">
                     <div class="media pd-x-20 pd-y-15">
-                        <img src="picture/img5.jpg" class="wd-40 rounded-circle" alt="">
+                        <img th:src="@{/picture/img5.jpg}" class="wd-40 rounded-circle" alt=""/>
                         <div class="media-body">
                             <p class="tx-13 mg-b-0 tx-gray-700"><strong class="tx-medium tx-gray-800">Julius
                                 Erving</strong> wants to connect with you on your conversation with <strong
@@ -396,13 +396,13 @@
             <h6 class="card-body-title">新增客户信息</h6>
             <p class="mg-b-20 mg-sm-b-30">Add customer information.</p>
 
-            <form action="/add" method="post" id="form_AddCust" onsubmit="return valiCust();"/>
+            <form action="/crm/customer" method="post" id="form_AddCust" onsubmit="return valiCust();">
             <input type="hidden" name="aciton" value="addCust"/>
             <div class="row">
                 <label class="col-sm-1 form-control-label">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名:<span
                         class="tx-danger">*</span></label>
                 <div class="col-sm-3 mg-t-10 mg-sm-t-0">
-                    <input type="text" class="form-control" placeholder="请输入客户姓名" name="name" onblur="validateName()">
+                    <input type="text" class="form-control" placeholder="请输入客户姓名" name="name" onblur="validateName()"/>
                     <span class="col-sm-12 mt-t-10 mg-sm-t-0 form-control-label" style="color: red; font-size:12px;"
                           id="nameInfo"/>
                 </div>
@@ -412,13 +412,13 @@
                         class="tx-danger">*</span></label>
                 <div class="col-sm-1 mg-t-10 mg-sm-t-0">
                     <label class="rdiobox">
-                        <input name="rdio_sex" type="radio" checked value="男">
+                        <input name="rdio_sex" type="radio" checked="checked" value="1"/>
                         <span>男</span>
                     </label>
                 </div>
                 <div class="col-sm-1 mg-t-10 mg-sm-t-0">
                     <label class="rdiobox">
-                        <input name="rdio_sex" type="radio" value="女">
+                        <input name="rdio_sex" type="radio" value="0"/>
                         <span>女</span>
                     </label>
                 </div>
@@ -427,36 +427,36 @@
                 <label class="col-sm-1 form-control-label">联系方式:<span class="tx-danger">*</span></label>
                 <div class="col-sm-3 mg-t-10 mg-sm-t-0">
                     <input type="text" class="form-control" placeholder="请输入客户联系方式1" name="contact1"
-                           onblur="validateContact()">
+                           onblur="validateContact()"/>
                     <span class="col-sm-12 mt-t-10 mg-sm-t-0 form-control-label" style="color: red; font-size:12px;"
                           id="contactInfo"/>
                 </div>
                 <div class="col-sm-3 mg-t-10 mg-sm-t-0">
                     <input type="text" class="form-control" placeholder="请输入客户联系方式2" name="contact2"
-                           onblur="validateContact()">
+                           onblur="validateContact()"/>
                 </div>
                 <div class="col-sm-3 mg-t-10 mg-sm-t-0">
                     <input type="text" class="form-control" placeholder="请输入客户联系方式3" name="contact3"
-                           onblur="validateContact()">
+                           onblur="validateContact()"/>
                 </div>
             </div>
             <div class="row mg-t-20">
                 <label class="col-sm-1 form-control-label">身份证号:</label>
                 <div class="col-sm-3 mg-t-10 mg-sm-t-0">
-                    <input type="text" class="form-control" placeholder="请输入客户身份证号" name="idCard">
+                    <input type="text" class="form-control" placeholder="请输入客户身份证号" name="idCard"/>
                 </div>
             </div>
             <div class="row mg-t-20">
                 <label class="col-sm-1 form-control-label">客户类别:<span class="tx-danger">*</span></label>
                 <div class="col-sm-2 mg-t-10 mg-sm-t-0 form-control-label">
                     <label class="rdiobox">
-                        <input name="rdio_sort" type="radio" checked id="rdio_sort_per" onclick="sortPer()">
+                        <input name="rdio_sort" type="radio" checked="checked" id="rdio_sort_per" onclick="sortPer()"/>
                         <span>个人客户</span>
                     </label>
                 </div>
                 <div class="col-sm-2 mg-t-10 mg-sm-t-0 form-control-label">
                     <label class="rdiobox">
-                        <input name="rdio_sort" type="radio" id="rdio_sort_com" onclick="sortCom()">
+                        <input name="rdio_sort" type="radio" id="rdio_sort_com" onclick="sortCom()"/>
                         <span>企业客户</span>
                     </label>
                 </div>
@@ -486,7 +486,7 @@
                 <div class="row mg-t-20">
                     <label class="col-sm-1 form-control-label">担任职务:</label>
                     <div class="col-sm-3 mg-t-10 mg-sm-t-0">
-                        <input type="text" class="form-control" placeholder="请输入客户职务" name="duty">
+                        <input type="text" class="form-control" placeholder="请输入客户职务" name="duty"/>
                     </div>
                 </div>
             </div>
@@ -495,32 +495,33 @@
                 <div class="col-sm-3 mg-t-10 mg-sm-t-0">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="icon ion-calendar tx-16 lh-0 op-6"></i></span>
-                        <input type="text" class="form-control fc-datepicker" placeholder="MM/DD/YYYY" name="birthday">
+                        <input type="text" class="form-control fc-datepicker" placeholder="MM/DD/YYYY" name="birthday"/>
                     </div>
                 </div>
             </div>
             <div class="row mg-t-20">
                 <label class="col-sm-1 form-control-label">电子邮箱:</label>
                 <div class="col-sm-3 mg-t-10 mg-sm-t-0">
-                    <input type="text" class="form-control" placeholder="请输入客户电子邮箱" name="email">
+                    <input type="text" class="form-control" placeholder="请输入客户电子邮箱" name="email"/>
                 </div>
             </div>
             <div class="row mg-t-20">
                 <label class="col-sm-1 form-control-label">爱&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;好:</label>
                 <div class="col-sm-5 mg-t-10 mg-sm-t-0">
-                    <input type="text" class="form-control" placeholder="请输入客户爱好" name="interest">
+                    <input type="text" class="form-control" placeholder="请输入客户爱好" name="interest"/>
                 </div>
             </div>
             <div class="row mg-t-20">
                 <label class="col-sm-1 form-control-label">需&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;求:</label>
                 <div class="col-sm-5 mg-t-10 mg-sm-t-0">
-                    <input type="text" class="form-control" placeholder="请输入客户需求" name="need">
+                    <input type="text" class="form-control" placeholder="请输入客户需求" name="need"/>
                 </div>
             </div>
             <div class="row mg-t-20">
                 <label class="col-sm-1 form-control-label">印&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;象:</label>
                 <div class="col-sm-5 mg-t-10 mg-sm-t-0">
-                    <select class="form-control select2" data-placeholder="请选择客户印象" multiple name="impression">
+                    <select class="form-control select2" data-placeholder="请选择客户印象" multiple="multiple"
+                            name="impression">
                         <option value="态度友好">态度友好</option>
                         <option value="态度恶劣">态度恶劣</option>
                         <option value="不差钱">不差钱</option>
@@ -532,7 +533,7 @@
             <div class="row mg-t-20">
                 <label class="col-sm-1 form-control-label">备&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注:</label>
                 <div class="col-sm-5 mg-t-10 mg-sm-t-0">
-                    <input type="text" class="form-control" placeholder="请输入备注" name="remarks">
+                    <input type="text" class="form-control" placeholder="请输入备注" name="remarks"/>
                 </div>
             </div>
             <div class="row mg-t-20">
@@ -547,19 +548,19 @@
                 <button class="btn btn-secondary">清&nbsp;&nbsp;&nbsp;&nbsp;空</button>
             </div><!-- form-layout-footer -->
             </form>
-    </div><!-- card -->
-</div><!-- sl-pagebody -->
-<footer class="sl-footer">
-    <div class="footer-left">
-        <div class="mg-b-2">Copyright &copy; 2018. 天津海津皇冠贸易有限公司. All Rights Reserved.</div>
-    </div>
-    <div class="footer-right d-flex align-items-center">Made by WY.</div>
-    <!-- <div class="footer-right d-flex align-items-center">
-      <span class="tx-uppercase mg-r-10">Share:</span>
-      <a target="_blank" class="pd-x-5" href="https://www.facebook.com/sharer/sharer.php?u=http%3A//themepixels.me/starlight"><i class="fa fa-facebook tx-20"></i></a>
-      <a target="_blank" class="pd-x-5" href="https://twitter.com/home?status=Starlight,%20your%20best%20choice%20for%20premium%20quality%20admin%20template%20from%20Bootstrap.%20Get%20it%20now%20at%20http%3A//themepixels.me/starlight"><i class="fa fa-twitter tx-20"></i></a>
-    </div> -->
-</footer>
+        </div><!-- card -->
+    </div><!-- sl-pagebody -->
+    <footer class="sl-footer">
+        <div class="footer-left">
+            <div class="mg-b-2">Copyright &copy; 2018. 天津海津皇冠贸易有限公司. All Rights Reserved.</div>
+        </div>
+        <div class="footer-right d-flex align-items-center">Made by WY.</div>
+        <!-- <div class="footer-right d-flex align-items-center">
+          <span class="tx-uppercase mg-r-10">Share:</span>
+          <a target="_blank" class="pd-x-5" href="https://www.facebook.com/sharer/sharer.php?u=http%3A//themepixels.me/starlight"><i class="fa fa-facebook tx-20"></i></a>
+          <a target="_blank" class="pd-x-5" href="https://twitter.com/home?status=Starlight,%20your%20best%20choice%20for%20premium%20quality%20admin%20template%20from%20Bootstrap.%20Get%20it%20now%20at%20http%3A//themepixels.me/starlight"><i class="fa fa-twitter tx-20"></i></a>
+        </div> -->
+    </footer>
 </div><!-- sl-mainpanel -->
 
 <!-- 企业信息 MODAL -->
@@ -577,42 +578,42 @@
                     <div class="card pd-20 pd-sm-40 form-layout form-layout-5">
                         <h6 class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-b-10">新增企业信息</h6>
                         <p class="mg-b-30 tx-gray-600">Add company information.</p>
-                        <form action="" method="post" id="form_AddCompany"/>
+                        <form action="" method="post" id="form_AddCompany">
                         <input type="hidden" name="action" value="AddCompany"/>
                         <div class="row">
                             <label class="col-sm-4 form-control-label">企业名称: <span class="tx-danger">*</span></label>
                             <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                                <input type="text" class="form-control" placeholder="请输入企业名称">
+                                <input type="text" class="form-control" placeholder="请输入企业名称"/>
                             </div>
                         </div><!-- row -->
                         <div class="row mg-t-20">
                             <label class="col-sm-4 form-control-label">企业性质:&nbsp; </label>
                             <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                                <input type="text" class="form-control" placeholder="请输入企业性质">
+                                <input type="text" class="form-control" placeholder="请输入企业性质"/>
                             </div>
                         </div>
                         <div class="row mg-t-20">
                             <label class="col-sm-4 form-control-label">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱: </label>
                             <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                                <input type="text" class="form-control" placeholder="请输入企业邮箱">
+                                <input type="text" class="form-control" placeholder="请输入企业邮箱"/>
                             </div>
                         </div>
                         <div class="row mg-t-20">
                             <label class="col-sm-4 form-control-label">地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址: </label>
                             <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                                <input type="text" class="form-control" placeholder="请输入企业地址">
+                                <input type="text" class="form-control" placeholder="请输入企业地址"/>
                             </div>
                         </div>
                         <div class="row mg-t-20">
                             <label class="col-sm-4 form-control-label">网&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址: </label>
                             <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                                <input type="text" class="form-control" placeholder="请输入企业网址">
+                                <input type="text" class="form-control" placeholder="请输入企业网址"/>
                             </div>
                         </div>
                         <div class="row mg-t-20">
                             <label class="col-sm-4 form-control-label">注册资金:&nbsp; </label>
                             <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                                <input type="text" class="form-control" placeholder="请输入企业注册资金">
+                                <input type="text" class="form-control" placeholder="请输入企业注册资金"/>
                             </div>
                         </div>
                         </form>
@@ -644,7 +645,7 @@
                     <div class="card pd-20 pd-sm-40 form-layout form-layout-5">
                         <h6 class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-b-10">新增企业发票信息</h6>
                         <p class="mg-b-30 tx-gray-600">Add company's invoice information.</p>
-                        <form action="" method="post" id="form_AddComInvo"/>
+                        <form action="" method="post" id="form_AddComInvo">
                         <input type="hidden" name="action" value="AddCompanyInvo"/>
                         <div class="row">
                             <label class="col-sm-4 form-control-label">所属企业:<span class="tx-danger">*</span></label>
@@ -661,37 +662,37 @@
                         <div class="row mg-t-20">
                             <label class="col-sm-4 form-control-label">发票抬头: <span class="tx-danger">*</span></label>
                             <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                                <input type="text" class="form-control" placeholder="请输入企业名称">
+                                <input type="text" class="form-control" placeholder="请输入企业名称"/>
                             </div>
                         </div><!-- row -->
                         <div class="row mg-t-20">
                             <label class="col-sm-4 form-control-label">纳税证号:&nbsp; </label>
                             <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                                <input type="text" class="form-control" placeholder="请输入企业性质">
+                                <input type="text" class="form-control" placeholder="请输入企业性质"/>
                             </div>
                         </div>
                         <div class="row mg-t-20">
                             <label class="col-sm-4 form-control-label">地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址: </label>
                             <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                                <input type="text" class="form-control" placeholder="请输入企业邮箱">
+                                <input type="text" class="form-control" placeholder="请输入企业邮箱"/>
                             </div>
                         </div>
                         <div class="row mg-t-20">
                             <label class="col-sm-4 form-control-label">联系方式: </label>
                             <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                                <input type="text" class="form-control" placeholder="请输入企业地址">
+                                <input type="text" class="form-control" placeholder="请输入企业地址"/>
                             </div>
                         </div>
                         <div class="row mg-t-20">
                             <label class="col-sm-4 form-control-label">开户银行: </label>
                             <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                                <input type="text" class="form-control" placeholder="请输入企业网址">
+                                <input type="text" class="form-control" placeholder="请输入企业网址"/>
                             </div>
                         </div>
                         <div class="row mg-t-20">
                             <label class="col-sm-4 form-control-label">银行卡号: </label>
                             <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                                <input type="text" class="form-control" placeholder="请输入企业注册资金">
+                                <input type="text" class="form-control" placeholder="请输入企业注册资金"/>
                             </div>
                         </div>
                         </form>
@@ -711,15 +712,15 @@
 
 <!-- ########## END: MAIN PANEL ########## -->
 
-<script src="js/jquery.js"></script>
-<script src="js/popper.js"></script>
-<script src="js/bootstrap.js"></script>
-<script src="js/jquery-ui.js"></script>
-<script src="js/perfect-scrollbar.jquery.js"></script>
-<script src="js/highlight.pack.js"></script>
-<script src="js/select2.min.js"></script>
+<script th:src="@{/js/jquery.js}"></script>
+<script th:src="@{/js/popper.js}"></script>
+<script th:src="@{/js/bootstrap.js}"></script>
+<script th:src="@{/js/jquery-ui.js}"></script>
+<script th:src="@{/js/perfect-scrollbar.jquery.js}"></script>
+<script th:src="@{/js/highlight.pack.js}"></script>
+<script th:src="@{/js/select2.min.js}"></script>
 
-<script src="js/starlight.js"></script>
+<script th:src="@{/js/starlight.js}"></script>
 <script>
     $(function () {
         'use strict';
@@ -751,7 +752,7 @@
         $('.fc-datepicker').datepicker({
             showOtherMonths: true,
             shouOtherYear: true,
-            selectOterYear:true,
+            selectOterYear: true,
             selectOtherMonths: true
         });
 
@@ -772,29 +773,6 @@
         return true;
     }
 
-    // 验证客户联系方式
-    function validateContact() {
-        var contact1 = $('input[name="contact1"]');
-        var contact2 = $('input[name="contact2"]');
-        var contact3 = $('input[name="contact3"]');
-        var contactInfo = $("#contactInfo");
-        contactInfo.html("");
-        if ((contact1.val() == null || ($.trim(contact1.val())) == "") &&
-            (contact2.val() == null || ($.trim(contact2.val())) == "") &&
-            (contact3.val() == null || ($.trim(contact3.val())) == "")) {
-            contactInfo.html("客户联系方式不能为空！");
-            contact1.addClass("is-invalid");
-            contact2.addClass("is-invalid");
-            contact3.addClass("is-invalid");
-            return false;
-        } else {
-            contact1.removeClass("is-invalid");
-            contact2.removeClass("is-invalid");
-            contact3.removeClass("is-invalid");
-        }
-        return true;
-    }
-
     function sortPer() {
         $("#cc").css('display', 'none');
     }
@@ -803,16 +781,6 @@
         $("#cc").css('display', 'block');
     }
 
-    function valiCust() {
-        if(validateName() && validateContact()) {
-            alert("yes");
-            // document.getElementById("form_addCust").submit();
-        }else {
-            validateName();
-            validateContact();
-            return false;
-        }
-    }
 
 </script>
 </body>
