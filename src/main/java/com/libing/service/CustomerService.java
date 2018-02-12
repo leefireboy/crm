@@ -1,6 +1,7 @@
 package com.libing.service;
 
 import com.libing.entity.Customer;
+import com.libing.enums.StateEnum;
 
 import java.util.List;
 
@@ -11,11 +12,13 @@ import java.util.List;
  */
 public interface CustomerService {
 
-    int addCustomer(Customer customer);
+    StateEnum insert(Customer customer);
 
-    Customer modifyCustomer(Long id, Customer customer);
+    StateEnum update(Customer customer);
 
-    Boolean deleteCustomer(Long id);
+    StateEnum delete(Long id);
+
+    Customer selectById(Long id);
 
     List<Customer> queryCustomerByParams(Long id, String name, String contact);
 

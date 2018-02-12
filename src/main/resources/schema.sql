@@ -27,6 +27,7 @@ CREATE TABLE IF NOT EXISTS customer (
   create_name VARCHAR(30) NOT NULL COMMENT '创建人',
   is_enable TINYINT NOT NULL DEFAULT 1 COMMENT '是否有效 0:无效 1:有效',
   PRIMARY KEY (id),
+  UNIQUE KEY idx_name_contact1 (name, contact1),
   KEY idx_name (name),
   KEY idx_contact (contact1, contact2, contact3),
   KEY idx_create_time (create_time)
@@ -48,7 +49,8 @@ CREATE TABLE IF NOT EXISTS company (
   create_id BIGINT NOT NULL COMMENT '创建人ID',
   create_name VARCHAR(30) NOT NULL COMMENT '创建人',
   is_enable TINYINT NOT NULL DEFAULT 1 COMMENT '是否有效 0:无效 1:有效',
-  PRIMARY KEY (id)
+  PRIMARY KEY (id),
+  UNIQUE KEY idx_name (name)
 ) ENGINE=InnoDB AUTO_INCREMENT=1000 DEFAULT CHARSET=utf8 COMMENT '公司信息表';
 
 -- 创建开票信息表
@@ -65,7 +67,8 @@ CREATE TABLE IF NOT EXISTS invoice_information (
   create_id BIGINT NOT NULL COMMENT '创建人ID',
   create_name VARCHAR(30) NOT NULL COMMENT '创建人',
   is_enable TINYINT NOT NULL DEFAULT 1 COMMENT '是否有效 0:无效 1:有效',
-  PRIMARY KEY (id)
+  PRIMARY KEY (id),
+  UNIQUE KEY idx_name (name)
 ) ENGINE=InnoDB AUTO_INCREMENT=1000 DEFAULT CHARSET=utf8 COMMENT '开票信息表';
 
 -- 创界客户联系人表

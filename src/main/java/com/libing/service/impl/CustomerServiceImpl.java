@@ -2,7 +2,10 @@ package com.libing.service.impl;
 
 import com.libing.dao.CustomerDao;
 import com.libing.entity.Customer;
+import com.libing.enums.StateEnum;
 import com.libing.service.CustomerService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,22 +19,52 @@ import java.util.List;
 @Service
 public class CustomerServiceImpl implements CustomerService {
 
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
+
     @Autowired
     private CustomerDao customerDao;
 
     @Override
-    public int addCustomer(Customer customer) {
-        return customerDao.insert(customer);
+    public StateEnum insert(Customer customer) {
+        try {
+            customerDao.insert(customer);
+            return StateEnum.SUCCESS;
+        } catch (Exception e) {
+            logger.error(e.getMessage(), e);
+            return StateEnum.FAIL;
+        }
     }
 
     @Override
-    public Customer modifyCustomer(Long id, Customer customer) {
-        return null;
+    public StateEnum update(Customer customer) {
+        try {
+            customerDao.update(customer);
+            return StateEnum.SUCCESS;
+        } catch (Exception e) {
+            logger.error(e.getMessage(), e);
+            return StateEnum.FAIL;
+        }
     }
 
     @Override
-    public Boolean deleteCustomer(Long id) {
-        return null;
+    public StateEnum delete(Long id) {
+        try {
+            customerDao.delete(id);
+            return StateEnum.SUCCESS;
+        } catch (Exception e) {
+            logger.error(e.getMessage(), e);
+            return StateEnum.FAIL;
+        }
+    }
+
+    @Override
+    public Customer selectById(Long id) {
+        try {
+            return customerDao.selectById(id);
+        } catch (Exception e) {
+            logger.error(e.getMessage(), e);
+            return null;
+        }
     }
 
     @Override
