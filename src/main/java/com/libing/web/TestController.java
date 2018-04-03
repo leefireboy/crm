@@ -15,8 +15,8 @@ public class TestController {
 
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     public ModelAndView hello() {
-        ModelAndView mv = new ModelAndView("index");
-        mv.addObject("name", 123456);
+        ModelAndView mv = new ModelAndView("form-layouts");
+//        mv.addObject("name", 123456);
         return mv;
     }
 

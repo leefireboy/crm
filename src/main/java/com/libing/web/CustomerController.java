@@ -34,7 +34,7 @@ public class CustomerController {
     @RequestMapping(value = "/customer", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
     public ModelAndView insert(Customer customer) {
         logger.debug("新增客户资料： " + customer.toString());
-        ModelAndView mv = new ModelAndView("insert");
+        ModelAndView mv = new ModelAndView("form-layouts");
         StateEnum result = customerService.insert(customer);
         mv.addObject("result", result.getState());
         return mv;
